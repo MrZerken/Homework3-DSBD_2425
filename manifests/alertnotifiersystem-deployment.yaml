@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alertnotifiersystem-deployment
+  namespace: dsbd-namespace
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: alertnotifiersystem
+  template:
+    metadata:
+      labels:
+        app: alertnotifiersystem
+    spec:
+      containers:
+        - name: alertnotifiersystem
+          image: c_alertnotifiersystem:latest
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: DB_HOST
+              value: "db"
+            - name: DB_USER
+              value: "myuser"
+            - name: DB_PASSWORD
+              value: "mypassword"
+            - name: DB_NAME
+              value: "dsbd_db"
+            - name: NODE_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: spec.nodeName
+          ports:
+            - containerPort: 8000 # se esponi metrics

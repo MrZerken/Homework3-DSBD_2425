@@ -1,0 +1,8 @@
+grpcio
+grpcio-tools
+sqlalchemy
+mysql-connector-python
+yfinance
+confluent-kafka
+prometheus_client
+pytz
