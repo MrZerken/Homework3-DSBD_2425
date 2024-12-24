@@ -1,6 +1,6 @@
 # Guida alla Build e Deploy
 
-## *Bonafede Salvatore Luca* - *Bontempo Gaetano*
+## <small>*Bonafede Salvatore Luca* - *Bontempo Gaetano*</small>
 
 ## Configurazione di Minikube
 
