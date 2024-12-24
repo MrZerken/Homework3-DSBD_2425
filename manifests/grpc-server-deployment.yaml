@@ -33,3 +33,19 @@ spec:
           ports:
             - containerPort: 18072
             - containerPort: 8000 # metrics
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: grpc-server
+  namespace: dsbd-namespace
+spec:
+  selector:
+    app: grpc-server
+  ports:
+    - name: grpc
+      port: 18072
+      targetPort: 18072
+    - name: metrics
+      port: 8000
+      targetPort: 8000

@@ -33,3 +33,15 @@ spec:
       volumes:
         - name: db-data
           emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: db
+  namespace: dsbd-namespace
+spec:
+  selector:
+    app: db
+  ports:
+    - port: 3306
+      targetPort: 3306
