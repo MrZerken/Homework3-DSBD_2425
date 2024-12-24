@@ -2,10 +2,9 @@ import grpc
 from concurrent import futures
 import time
 import os
-
 from dsbd_pb2_grpc import DSBDServiceServicer, add_DSBDServiceServicer_to_server
-from command_handler import CommandHandler
-from query_handler import QueryHandler
+from handlers.command_handler import CommandHandler
+from handlers.query_handler import QueryHandler
 
 # Import Prometheus
 from prometheus_client import start_http_server, Counter, Gauge
@@ -18,12 +17,12 @@ service_name = "dsbd_grpc_server"
 # Definizione metriche Prometheus
 # COUNTER per il numero di chiamate RPC effettuate
 rpc_requests_total = Counter('grpc_rpc_requests_total', 
-                             'Total number of RPC requests received',
+                             '***Numero Totale di richieste RPC ricevute***',
                              ['service', 'node', 'rpc_method'])
 
 # GAUGE per la latenza dell’ultima chiamata RPC
 rpc_latency_seconds = Gauge('grpc_rpc_request_latency_seconds',
-                            'Latency of the last RPC request in seconds',
+                            '***Latenza dell ultima richiesta RPC (in secondi)***',
                             ['service', 'node', 'rpc_method'])
 
 # Avvio del server Prometheus su una porta dedicata (8000)

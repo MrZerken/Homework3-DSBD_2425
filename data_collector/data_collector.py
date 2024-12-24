@@ -20,12 +20,12 @@ service_name = "data_collector"
 # Definizione metriche Prometheus
 # COUNTER: Numero totale di aggiornamenti richiesti
 update_requests_total = Counter('data_collector_update_requests_total', 
-                                'Number of total update_data requests', 
+                                '***Numero Totale di richieste di AGGIORNAMENTO DEI DATI***', 
                                 ['service', 'node'])
 
 # GAUGE: Latenza dell'operazione di aggiornamento dati
 update_latency_seconds = Gauge('data_collector_update_latency_seconds', 
-                               'Latency of update_data operation in seconds', 
+                               '***Latenza dell operazione di AGGIORNAMENTO DATI (in secondi)***', 
                                ['service', 'node'])
 
 # Avvio del server Prometheus su una porta dedicata (es. 8000)

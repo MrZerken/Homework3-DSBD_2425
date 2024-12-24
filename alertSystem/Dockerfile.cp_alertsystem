@@ -5,7 +5,6 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY database.py cp_AlertSystem.py ./ 
-
+COPY database.py alertSystem/cp_AlertSystem.py ./ 
 
 CMD ["python", "cp_AlertSystem.py"]

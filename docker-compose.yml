@@ -20,7 +20,7 @@ services:
   grpc-server:
     build:
       context: .
-      dockerfile: Dockerfile.server
+      dockerfile: server/Dockerfile.server
     container_name: grpc-server
     depends_on:
       db:
@@ -39,7 +39,7 @@ services:
   data-collector:
     build:
       context: .
-      dockerfile: Dockerfile.datacollector
+      dockerfile: data_collector/Dockerfile.datacollector
     container_name: data-collector
     depends_on:
       db:
@@ -55,7 +55,7 @@ services:
   cp_alertsystem:
     build:
       context: .
-      dockerfile: Dockerfile.cp_alertsystem
+      dockerfile: alertSystem/Dockerfile.cp_alertsystem
     container_name: alertsystem
     environment:
       DB_HOST: db
@@ -69,7 +69,7 @@ services:
   c_alertnotifiersystem:
     build:
       context: .
-      dockerfile: Dockerfile.c_alertnotifiersystem
+      dockerfile: alertSystem/Dockerfile.c_alertnotifiersystem
     container_name: alertnotifiersystem
     depends_on:
       - cp_alertsystem
