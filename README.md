@@ -1,3 +1,7 @@
+# Guida alla Build e Deploy
+
+## *Bonafede Salvatore Luca* - *Bontempo Gaetano*
+
 ## Configurazione di Minikube
 
 ### Avvia Minikube
@@ -45,7 +49,7 @@ kubectl port-forward svc/grpc-server 18072:18072 -n dsbd-namespace
 
 ---
 
-## Debugging e Monitoraggio
+## Monitoraggio
 
 ### Metriche del Server
 Esporre la porta del GRPC Server per monitorare le metriche:
