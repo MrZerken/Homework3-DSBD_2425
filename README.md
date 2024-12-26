@@ -1,6 +1,8 @@
 # Guida alla Build e Deploy
 
-### <small>*Bonafede Salvatore Luca* - *Bontempo Gaetano*</small>
+**Studenti:**  
+Bonafede Salvatore Luca (1000067612)  
+Bontempo Gaetano (1000067613)
 
 ## Configurazione di Minikube
 
