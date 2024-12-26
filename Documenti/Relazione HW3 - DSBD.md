@@ -5,7 +5,7 @@ Bonafede Salvatore Luca (1000067612)
 Bontempo Gaetano (1000067613)
 
 ## ABSTRACT
-Per l’Homework 3, il sistema sviluppato è stato esteso con nuove funzionalità, introducendo un meccanismo di white-box monitoring per raccogliere informazioni sulle performance di almeno due microservizi esistenti. Il sistema monitorato è stato deployato su una piattaforma Kubernetes integrando Prometheus come strumento per la raccolta delle metriche. Inoltre, l'architettura è stata adattata per l'esecuzione su Kubernetes.
+Per l’Homework 3, il sistema sviluppato è stato esteso con nuove funzionalità, introducendo un meccanismo di white-box monitoring per raccogliere informazioni sulle performance di almeno due microservizi esistenti. Il sistema monitorato è stato deployato su una piattaforma Kubernetes integrando Prometheus come strumento per la raccolta delle metriche. 
 
 ## 1. MONITORAGGIO CON PROMETHEUS
 È stato implementato un sistema di monitoraggio white-box utilizzando Prometheus, concentrandosi su due microservizi chiave: il server gRPC e il Data Collector.  
@@ -21,8 +21,8 @@ Ecco i microservizi soggetti al monitoraggio:
   - `data_total_updates (COUNTER)` – Numero totale di richieste di Aggiornamento Dati
 
 ## 2. Deployment su Kubernetes
-Il sistema è stato distribuito su una piattaforma Kubernetes, con il deployment dei microservizi tramite manifest. È stata utilizzato un cluster locale (Minikube) per testare e validare il sistema. Per esporre i servizi sono stati configurati opportunamente Service di tipo NodePort.  
-Il deployment è stato testato con successo su Minikube, validando la raccolta e visualizzazione delle metriche tramite l’interfaccia web di Prometheus. La configurazione tramite manifest YAML rende il sistema facilmente replicabile in ambienti di produzione.
+Il sistema è stato distribuito su una piattaforma Kubernetes utilizzando manifest YAML per il deployment dei microservizi. 
+Per testare e validare il sistema, è stato utilizzato un cluster locale Minikube. Quest'ultimo è uno strumento che consente di eseguire un cluster Kubernetes in locale, facilitando lo sviluppo di applicazioni containerizzate. Per esporre i servizi all'esterno del cluster, sono stati configurati Service di tipo NodePort. Un Service di tipo NodePort consente di aprire una porta specifica su ogni nodo del cluster, permettendo l'accesso ai servizi da indirizzi IP esterni. Questo approccio è utile in ambienti di sviluppo, poiché consente di accedere ai servizi senza la necessità di configurare un LoadBalancer.
 
 ## 3. Diagramma Architetturale
 Di seguito è riportato un diagramma che illustra i micro-servizi coinvolti e le loro interazioni:
