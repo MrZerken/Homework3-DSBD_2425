@@ -65,11 +65,11 @@ kubectl port-forward svc/grpc-server 8000:8000 -n dsbd-namespace
 ### Metriche del Data Collector
 Esporre la porta del Data Collector per monitorare le metriche:
 ```bash
-kubectl port-forward svc/data-collector 8000:8000 -n dsbd-namespace
+kubectl port-forward svc/data-collector 8100:8100 -n dsbd-namespace
 ```
 
 - Accedi alle metriche dal browser:
-  [http://localhost:8000/metrics](http://localhost:8000/metrics)
+  [http://localhost:8100/metrics](http://localhost:8100/metrics)
 
 ### Debug dei Pods
 

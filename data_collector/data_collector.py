@@ -29,7 +29,7 @@ update_latency_seconds = Gauge('data_collector_update_latency_seconds',
                                ['service', 'node'])
 
 # Avvio del server Prometheus su una porta dedicata (es. 8000)
-start_http_server(8000)
+start_http_server(8100)
 
 
 # Configurazione Kafka per produttore

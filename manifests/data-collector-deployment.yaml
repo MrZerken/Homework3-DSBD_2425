@@ -31,7 +31,7 @@ spec:
                 fieldRef:
                   fieldPath: spec.nodeName
           ports:
-            - containerPort: 8000 # metrics
+            - containerPort: 8100 # metrics
 ---
 apiVersion: v1
 kind: Service
@@ -43,5 +43,5 @@ spec:
     app: data-collector
   ports:
     - name: metrics
-      port: 8000
-      targetPort: 8000
+      port: 8100
+      targetPort: 8100
